@@ -23,29 +23,35 @@ const csvWriter = createCsvWriter({
 fs.createReadStream("./file/input.csv")
   .pipe(csv())
   .on("data", (row) => {
-    //replace ip with your ip address colum name avoid using space in your column name to avoid an error
     ipArray.push(row.ip)
   })
   .on("end", async () => {
-    console.log('📄 CSV file loaded. Starting IP lookup...');
-    console.log("CSV file successfully processed")
-    ip2Asn.open("./db/IP2LOCATION-LITE-ASN.BIN")
-    ip2location.open("./db/IP2LOCATION-LITE-DB1.BIN")
+    console.log("📄 CSV file loaded. Starting IP lookup...")
 
-    let resultArray = []
+    try {
+      ip2Asn.open("./db/IP2LOCATION-LITE-ASN.BIN")
+      ip2location.open("./db/IP2LOCATION-LITE-DB1.BIN")
 
-    for (const ip of ipArray) {
-      console.log(`🔍 Processing ${ip}...`);
-      const country = await ip2location.getCountryLongAsync(ip)
-      const isp = await ip2Asn.getASAsync(ip)
-      resultArray.push({ ip, country, isp })
+      let resultArray = []
+
+      for (const ip of ipArray) {
+        console.log(`🔍 Processing ${ip}...`)
+        const country = await ip2location.getCountryLongAsync(ip)
+        const isp = await ip2Asn.getASAsync(ip)
+        resultArray.push({ ip, country, isp })
+      }
+
+      await csvWriter.writeRecords(resultArray)
+
+      console.log("✅ The CSV file was written successfully.")
+      console.log("📂 You can view the result (output.csv) in the /file folder.")
+      console.log("🟢 All done! You can close the terminal now.")
+
+    } catch (error) {
+      console.error("❌ An error occurred:", error.message)
+      console.log("👉 If this issue persists, report it at: https://github.com/muhdyusuf/ip2loaction_nodejs/issues")
+    } finally {
+      ip2Asn.close()
+      ip2location.close()
     }
-
-    // Write the result to a new CSV file
-    csvWriter
-      .writeRecords(resultArray)
-      .then(() => console.log("The CSV file was written successfully"))
-
-    ip2Asn.close()
-    ip2location.close()
   })

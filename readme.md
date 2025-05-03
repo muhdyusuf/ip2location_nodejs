@@ -45,10 +45,6 @@ project-folder/
 2. **Clone or download this repo**
 click the code button to download
 
-3. **Install required packages** by running this command `inside your downloaded project folder`:
-
-   ```bash
-   npm install
 
 3. **📥 Download the IP2Location BIN Files (optional)**
   download and replace the db if you want to update the db
@@ -78,6 +74,7 @@ Just double-click the run.bat file.
 
 It will:
 <ol>
+<li>Install all dependencies</li>
 <li> Read the IPs from input.csv</li>
 
 <li> Look up the country and ISP for each</li>

@@ -69,6 +69,8 @@ click the code button to download
 
 ---
 ## 🚀 How to Run
+> ⚠️ **WARNING:** The `run.bat` file will automatically install dependencies and run the script.  
+> Only run it if you **understand what it's doing** and **trust the code**. It requires internet access to install packages.
 
 Just double-click the run.bat file.
 

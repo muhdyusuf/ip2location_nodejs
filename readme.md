@@ -77,15 +77,15 @@ click the code button to download
 Just double-click the run.bat file.
 
 It will:
+<ol>
+<li> Read the IPs from input.csv</li>
 
-Read the IPs from input.csv
+<li> Look up the country and ISP for each</li>
 
-Look up the country and ISP for each
-
-Save the results to output.csv inside the /file folder
+<li> Save the results to output.csv inside the /file folder</li>
+</ol>
 
 ---
-
 ## 📌 Notes
 
 Do not use spaces in the column name (ip) of your CSV.

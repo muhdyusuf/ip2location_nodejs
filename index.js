@@ -50,7 +50,7 @@ fs.createReadStream("./file/input.csv")
 
     } catch (error) {
       console.error("❌ An error occurred:", error.message)
-      console.log("👉 If this issue persists, report it at: https://github.com/muhdyusuf/ip2loaction_nodejs/issues")
+      console.log("👉 If this issue persists, report it at: https://github.com/muhdyusuf/ip2location_nodejs/issues")
     } finally {
       ip2Asn.close()
       ip2location.close()

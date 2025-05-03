@@ -27,6 +27,7 @@ fs.createReadStream("./file/input.csv")
   })
   .on("end", async () => {
     console.log("📄 CSV file loaded. Starting IP lookup...")
+    console.time("⏱️ Processing Time") // Start timing   
 
     try {
       ip2Asn.open("./db/IP2LOCATION-LITE-ASN.BIN")
@@ -45,7 +46,7 @@ fs.createReadStream("./file/input.csv")
 
       console.log("✅ The CSV file was written successfully.")
       console.log("📂 You can view the result (output.csv) in the /file folder.")
-      console.log("🟢 All done! You can close the terminal now.")
+      
 
     } catch (error) {
       console.error("❌ An error occurred:", error.message)
@@ -53,5 +54,7 @@ fs.createReadStream("./file/input.csv")
     } finally {
       ip2Asn.close()
       ip2location.close()
+      console.timeEnd("⏱️ Processing Time") // End timing
+      console.log("🟢 All done! You can close the terminal now.")
     }
   })

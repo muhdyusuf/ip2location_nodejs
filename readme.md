@@ -41,13 +41,17 @@ project-folder/
 1. **Install Node.js** if not already installed:  
    👉 https://nodejs.org
 
-2. **Install required packages** by running this command inside your project folder:
+
+2. **Clone or download this repo**
+click the code button to download
+
+3. **Install required packages** by running this command `inside your downloaded project folder`:
 
    ```bash
-   npm install ip2location-nodejs csv-parser csv-writer
+   npm install
 
-3. **📥 Download the IP2Location BIN Files**
-
+3. **📥 Download the IP2Location BIN Files (optional)**
+  download and replace the db if you want to update the db
 - Download the `.BIN` files from IP2Location:
   👉 [https://lite.ip2location.com/](https://lite.ip2location.com/)
 

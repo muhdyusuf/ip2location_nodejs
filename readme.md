@@ -18,7 +18,7 @@ project-folder/
 │
 ├── db/
 │ ├── IP2LOCATION-LITE-ASN.BIN # ASN DB file (for ISP name)
-│ └── IP2LOCATION-LITE-DB1.BIN # Country DB file
+│ └── IP2LOCATION-LITE-DB9.BIN # Country DB file
 │
 ├── file/
 │ ├── input.csv # Your input file (must have a column named ip)
@@ -52,8 +52,7 @@ click the code button to download
   👉 [https://lite.ip2location.com/](https://lite.ip2location.com/)
 
 - Place the downloaded `.BIN` files inside the `/db` folder.
-
-
+  
 
 4.  **📄 Prepare Your Input File**
 

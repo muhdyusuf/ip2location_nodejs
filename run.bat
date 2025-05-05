@@ -18,6 +18,6 @@ IF NOT EXIST "node_modules" (
 )
 
 echo Running script...
-node index.js
+node ipResolver.js
 
 pause
